@@ -34,7 +34,7 @@ Installation under Windows might require the installation of Rtools. There will 
 #### shows that this function results in the same ordering as *heatmap()*  
 
 ```{r}
-require(sommer) # to create an additive relationship matrix
+require(sommer) # one of the packages with a function to create an additive relationship matrix
 
 ## create an example matrix
 x <- matrix(rnorm(50), 10, 10, 
