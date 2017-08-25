@@ -5,7 +5,8 @@
 MyDistOrd
 ==============
 
-R-package to re-order an additive relationship matrix (created by *sommer::A.mat()*) following the algorithm used in *stats::heatmap()* but without the overhead of creating a figure. Benefit over *heatmap()* is that it will handle large matrices.
+R-package to re-order an additive relationship matrix (created by, for example, *sommer::A.mat()*) following the algorithm used in *stats::heatmap()* but without the overhead of creating a figure. Benefit over *heatmap()* is that it will handle large matrices.  
+Was tested with a additive relationship matrix created by *sommer::A.mat()* only. Feedback appreciated in case there are issues with other functions.
 
 See 
 
@@ -42,8 +43,12 @@ x <- matrix(rnorm(50), 10, 10,
 
 ## convert to additive relationship matrix
 x <- sommer::A.mat(x)
+
+# do the ordering via heatmap()
 hv <- heatmap(x)
 heatmap.sorted <- x[rev(hv$rowInd), rev(hv$colInd)]
+
+# now the ordering via MyDistOrd()
 sorted <- MyDistOrd(x)
 
 ## to show that the result of heatmap() and this function are the same

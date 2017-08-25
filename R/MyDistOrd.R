@@ -1,6 +1,6 @@
-#' Function to re-order a symmetric additive relationship matrix created by \code{sommer::A.mat} following the algorithm in heatmap().
+#' Function to re-order an additive relationship matrix (created by, for example, *sommer::A.mat()*) following the algorithm in *heatmap()*.
 #'
-#' @param x Symmetric additive relationship matrix (as created by \code{sommer::A.mat})
+#' @param x Symmetric additive relationship matrix (as created by, for example \code{sommer::A.mat}). Function was tested with a additive relationship matrix created by *sommer::A.mat()* only. No guarantee on compatibility with other functions.
 #' @return Provides the sorted matrix.
 #' @export
 #' @examples
