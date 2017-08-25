@@ -31,7 +31,7 @@ devtools::install_github("MarkusLoew/MyDistOrd")
 Installation under Windows might require the installation of Rtools. There will be a prompt for it if needed.
 
 ### Example usage  
-#### shows that this function results in the same ordering as heatmap()  
+#### shows that this function results in the same ordering as *heatmap()*  
 
 ```{r}
 require(sommer) # to create an additive relationship matrix
