@@ -1,6 +1,15 @@
 MyDistOrd 0.0.1.1
 ----------------------------------------------------------------
 
+* Speed improvement: removed calculation for columns, using a copy of the calculation
+for rows instead.
+* added option for multi-threaded processing via amap package. On the example matrix, 
+parallel processing is actually slower compared to single-threaded. Option disabled by default.
+
+
+MyDistOrd 0.0.1.1
+----------------------------------------------------------------
+
 * Changed readme and helpfile to indicate that *summer* is just one 
 of many packages to create a additive relationship matrix
 

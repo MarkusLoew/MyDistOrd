@@ -2,24 +2,26 @@
 % Please edit documentation in R/MyDistOrd.R
 \name{MyDistOrd}
 \alias{MyDistOrd}
-\title{Function to re-order a symmetric additive relationship matrix created by \code{sommer::A.mat} following the algorithm in heatmap().}
+\title{Function to re-order an additive relationship matrix (created by, for example, *sommer::A.mat()*) following the algorithm in *heatmap()*.}
 \usage{
-MyDistOrd(x)
+MyDistOrd(x, parallel = FALSE)
 }
 \arguments{
-\item{x}{Symmetric additive relationship matrix (as created by \code{sommer::A.mat})}
+\item{x}{Symmetric additive relationship matrix (as created by, for example \code{sommer::A.mat}). Function was tested with a additive relationship matrix created by \code{sommer::A.mat()} only. No guarantee on compatibility with other functions.}
+
+\item{parallel}{Optional use of \code{amap::Dist} and \code{amap::hcluster} for parallel processing. However, testing showed that using this, makes the calculation actually slower. Defaults to FALSE. Not available on Windows OS.}
 }
 \value{
 Provides the sorted matrix.
 }
 \description{
-Function to re-order a symmetric additive relationship matrix created by \code{sommer::A.mat} following the algorithm in heatmap().
+Function to re-order an additive relationship matrix (created by, for example, *sommer::A.mat()*) following the algorithm in *heatmap()*.
 }
 \examples{
 require(sommer)
 x <- matrix(rnorm(50), 10, 10, 
            dimnames = list(paste("g", 1:10, sep=""), 
-           paste("t", 1:10, sep=""))) 
+                           paste("t", 1:10, sep=""))) 
 ## convert to additive relationship matrix
 x <- sommer::A.mat(x)
 hv <- heatmap(x)
@@ -27,4 +29,5 @@ heatmap.sorted <- x[rev(hv$rowInd), rev(hv$colInd)]
 sorted <- MyDistOrd(x)
 ## to show that the result of heatmap() and this function are the same
 heatmap.sorted == sorted
+identical(heatmap.sorted, sorted)
 }

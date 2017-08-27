@@ -6,7 +6,9 @@ MyDistOrd
 ==============
 
 R-package to re-order an additive relationship matrix (created by, for example, *sommer::A.mat()*) following the algorithm used in *stats::heatmap()* but without the overhead of creating a figure. Benefit over *heatmap()* is that it will handle large matrices.  
-Was tested with a additive relationship matrix created by *sommer::A.mat()* only. Feedback appreciated in case there are issues with other functions.
+Was tested with a additive relationship matrix created by *sommer::A.mat()* only. Feedback appreciated in case there are issues with other functions.  
+
+Update, version 0.0.2.0: Now with an option for parallelised processing via function provided by package *amap*. However, testing with the example data shows that parallel processing slows it down, depending on number of rows. Option disabled by default. Parallel processing not available on Windows OS.
 
 See 
 
